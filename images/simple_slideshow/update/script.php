@@ -27,10 +27,10 @@ class Update
             $groupId = $parametersGroup['id'];
             $this->addParameter($groupId, array('name' => 'playback_options', 'translation' => 'Playback options (http://jquery.malsup.com/cycle/options.html)', 'admin' => 0, 'type'=> 'textarea', 'value' => 'delay:200', 'comment' => 'Available options: http://jquery.malsup.com/cycle/options.html'));
 
-            $value="timeout:3000
-fx:'fade'
-speed:800
-pager:'.ipPluginSimpleSlideshowTabs'";
+                $value="timeout:3000
+    fx:'fade'
+    speed:800
+    pager:'.ipPluginSimpleSlideshowTabs'";
 
             $parametersMod->setValue('images', 'simple_slideshow', 'options', 'playback_options', $value);
 
