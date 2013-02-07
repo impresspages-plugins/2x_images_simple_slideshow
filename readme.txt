@@ -14,6 +14,8 @@ INSTALL
 
 <?php echo $site->generateBlock('simpleSlideshow'); ?>
 
+Look for options: Developer -> Modules Config -> Simple Slideshow -> Options
+
 Enjoy slideshow.
 
 
