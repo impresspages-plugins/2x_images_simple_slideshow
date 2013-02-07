@@ -20,7 +20,7 @@ class System{
         global $dispatcher;
 
         $site->addJavascript(BASE_URL.LIBRARY_DIR.'js/jquery/jquery.js');
-        $site->addJavascript(BASE_URL.LIBRARY_DIR.'js/jquery-tools/jquery.tools.ui.tabs.js', 2);
+        $site->addJavascript(BASE_URL.PLUGIN_DIR.'images/simple_slideshow/public/jquery.cycle.all.js');
         $site->addJavascript(BASE_URL.PLUGIN_DIR.'images/simple_slideshow/public/slideshow.js', 2);
         $site->addCSS(BASE_URL.PLUGIN_DIR.'images/simple_slideshow/public/slideshow.css');
         
@@ -29,13 +29,18 @@ class System{
     }
     
     public static function generateSlideshow (\Ip\Event $event) {
-        global $site;
+        global $parametersMod;
+
         $blockName = $event->getValue('blockName');
         if ($blockName == 'simpleSlideshow') {
             require_once(__DIR__.'/model.php');
             $images = Model::getSlides();
+            $options = Model::getOptions();
             $data = array (
-                'images' => $images
+                'images' => $images,
+                'width' => $parametersMod->getValue('images', 'simple_slideshow', 'options', 'image_width'),
+                'height' => $parametersMod->getValue('images', 'simple_slideshow', 'options', 'image_height'),
+                'options' => $options
             );
             $slideshowHtml = \Ip\View::create('view/slideshow.php', $data)->render();
            

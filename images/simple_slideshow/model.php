@@ -40,6 +40,35 @@ class Model {
         }
         return $answer;
     }
+
+
+    public static function getOptions() {
+        global $parametersMod;
+        $answer = array();
+
+        $optionsStr = $parametersMod->getValue('images', 'simple_slideshow', 'options', 'playback_options');
+        $optionLines = preg_split ('/$\R?^/m', $optionsStr);
+        foreach($optionLines as $optionLine) {
+            $parts = explode(':', $optionLine, 2);
+            if (count($parts) != 2) {
+                continue;
+            }
+            $key = trim($parts[0]);
+            $value = trim($parts[1]);
+            $firstChar = substr($parts[1], 0, 1);
+            if ($firstChar != '\'' && $firstChar != '"'){
+                $value = (int)$value;
+            } else {
+                $value = mb_substr($value, 1, -1);
+            }
+            if ($key == '' || $value == '') {
+                continue;
+            }
+            $answer[$key] = $value;
+        }
+        return $answer;
+    }
+
     
     
 }

@@ -7,6 +7,20 @@
     display: none;
 }
 
+.ipPluginSimpleSlideshowTabs a{
+    radius: 5px;
+    border: 1px solid #fff;
+    background-color: #ccc;
+    position: relative;
+    top: -26px;
+    left: 5px;
+    z-index: 100;
+    color: #fff;
+    padding: 3px;
+    margin-right: 5px;
+    font-size: 10px;
+}
+
 
 .ipPluginSimpleSlideshowImages > div {
     position: absolute;
