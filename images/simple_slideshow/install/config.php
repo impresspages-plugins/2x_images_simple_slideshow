@@ -31,3 +31,11 @@ $moduleTitle["images"]["simple_slideshow"] = "Simple slideshow";
     $parameterValue["images"]["simple_slideshow"]["options"]["quality"] = "90";
     $parameterAdmin["images"]["simple_slideshow"]["options"]["quality"] = "0";
     $parameterType["images"]["simple_slideshow"]["options"]["quality"] = "integer";
+
+    $parameterTitle["images"]["simple_slideshow"]["options"]["playback_options"] = "Playback options (http://jquery.malsup.com/cycle/options.html)";
+    $parameterValue["images"]["simple_slideshow"]["options"]["playback_options"] = "timeout:3000
+fx:'fade'
+speed:800
+pager:'.ipPluginSimpleSlideshowTabs'";
+    $parameterAdmin["images"]["simple_slideshow"]["options"]["playback_options"] = "0";
+    $parameterType["images"]["simple_slideshow"]["options"]["playback_options"] = "textarea";
